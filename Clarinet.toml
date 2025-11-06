@@ -1,0 +1,16 @@
+[project]
+name = "linacoin"
+authors = ["anthony"]
+description = "SIP-010 compliant fungible token: Linacoin (LINA)"
+telemetry = false
+
+[contracts.sip-010-trait]
+path = "contracts/sip-010-trait.clar"
+
+[contracts.linacoin]
+path = "contracts/linacoin.clar"
+depends_on = ["sip-010-trait"]
+# Clarity 2 is the default in recent Clarinet; explicitly set if supported by your Clarinet version
+clarity_version = 2
+# Target the latest epoch supported by your Clarinet; adjust if needed
+epoch = "2.5"
